@@ -7,16 +7,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class StudioDeveloper {
-    private int type;
+    private String type;
+    private float salaryPerHour;
     private float productionPerDay;
     private int dayDuration = 1000;
+    private float earnings;
+    private float totalProduction;
     private float acc = 0;
+    private String gameComponent;
+    private String company;
     private Drive drive;
-    Semaphore mutex;
+    private Semaphore mutex;
     
-    public StudioDeveloper (int type, float pp, Drive drive, Semaphore m){
-        this.type = type;
-        this.productionPerDay = pp;
+    public StudioDeveloper(String type, String company, Drive drive, Semaphore m){
+        this.gameComponent= type;
+        this.company= company;
+        this.earnings= 0;
+        this.totalProduction= 0;
+        this.configureDeveloperByComponent();
         this.drive = drive;
         this.mutex = m;
     }
@@ -25,13 +33,71 @@ public class StudioDeveloper {
     public void run() {
         while(true) {
             try {  
-                Work();
+                produceGameComponent();
                 sleep(dayDuration);
             } catch (InterruptedException ex) {
-                Logger.getLogger(StudioDeveloper.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Ocurrió un error");
             }
         }
     }
+    
+    private void configureDeveloperByComponent(){
+        if (company.equals("Square Enix")){
+            switch(gameComponent){
+                case "Narrativa":
+                    salaryPerHour= 10;
+                    productionPerDay= 0.5f;
+                    break;
+                case "Niveles":
+                    salaryPerHour= 13;
+                    productionPerDay= 0.5f;
+                    break;
+                case "Sprites":
+                    salaryPerHour= 20;
+                    productionPerDay= 3.0f;
+                    break;
+                case "Lógica":
+                    salaryPerHour= 8;
+                    productionPerDay= 3.0f;
+                    break;
+                case "DLC":
+                    salaryPerHour= 17;
+                    productionPerDay= 1.0f/3;
+                    break;
+                case "Integrador":
+                    salaryPerHour= 25;
+                    productionPerDay= 0.5f;
+                    break;  
+        }
+        }else if(company.equals("Capcom")){
+            switch(gameComponent){
+                case "Narrativa":
+                    salaryPerHour= 10;
+                    productionPerDay= 0.5f;
+                    break;
+                case "Niveles":
+                    salaryPerHour= 13;
+                    productionPerDay= 0.5f;
+                    break;
+                case "Sprites":
+                    salaryPerHour= 20;
+                    productionPerDay= 3.0f;
+                    break;
+                case "Lógica":
+                    salaryPerHour= 8;
+                    productionPerDay= 3.0f;
+                    break;
+                case "DLC":
+                    salaryPerHour= 17;
+                    productionPerDay= 1.0f/3;
+                    break;
+                case "Integrador":
+                    salaryPerHour= 25;
+                    productionPerDay= 0.5f;
+                    break;  
+        }
+    }
+ }
     
     public void Work(){
         this.acc += this.productionPerDay;
@@ -55,3 +121,4 @@ public class StudioDeveloper {
         System.out.println(this.drive.getDLC());
     }
 }
+

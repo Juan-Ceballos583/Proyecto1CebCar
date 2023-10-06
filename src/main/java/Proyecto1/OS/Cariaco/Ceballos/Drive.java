@@ -1,19 +1,32 @@
 
 package Proyecto1.OS.Cariaco.Ceballos;
 
+import javax.swing.JLabel;
+
 public class Drive {
-    public int levels;
-    public int narrative;
-    public int sprites;
-    public int logic;
-    public int DLC;
+    private int levels;
+    private int narrative;
+    private int sprites;
+    private int logic;
+    private int DLC;
+    private int daysRemaining;
+    private int games;
+    private int gamesDLC;
+    private int gamesCounter;
+    private JLabel[] labels;
     
-    public Drive(int levels, int narrative, int sprites, int logic, int DLC) {
-        this.levels = levels;
-        this.narrative = narrative;
-        this.sprites = sprites;
-        this.logic = logic;
-        this.DLC = DLC;
+    
+    public Drive() {
+        this.levels = 0;
+        this.narrative = 0;
+        this.sprites = 0;
+        this.logic = 0;
+        this.DLC = 0;
+        this.daysRemaining= 5;
+        this.games = 0;
+        this.gamesDLC = 0;
+        this.gamesCounter= 0;
+        this.labels = new JLabel[5];
     }
 
     public int getLevels() {
@@ -51,24 +64,107 @@ public class Drive {
     public int getDLC() {
         return DLC;
     }
-
+    
     public void setDLC(int DLC) {
         this.DLC = DLC;
     }
     
-    public void addProduct(int productQty, int type){
-    if(type == 0){
-        setLevels(getLevels()+productQty);
-    }else if(type == 1){
-        setNarrative(getNarrative()+productQty);
-    }else if(type == 2){
-        setSprites(getSprites()+productQty);
-    }else if(type == 3){
-        setLogic(getLogic()+productQty);
-    }else if(type == 4){
-        setDLC(getDLC()+productQty);
-    }else{
-        System.out.println("Error, por favor, inténtelo de nuevo");
+    public int getGames() {
+        return games;
     }
+
+    public void setGames(int games) {
+        this.games = games;
+    }
+
+    public int getGamesDLC() {
+        return gamesDLC;
+    }
+
+    public void setGamesDLC(int gamesDLC) {
+        this.gamesDLC = gamesDLC;
+    }
+
+    public JLabel[] getLabels() {
+        return labels;
+    }
+
+    public void setLabels(JLabel[] labels) {
+        this.setLabels(labels);
+    }
+
+    public int getDaysRemaining() {
+        return daysRemaining;
+    }
+
+    public void setDaysRemaining(int daysRemaining) {
+        this.daysRemaining = daysRemaining;
+    }
+
+    public int getGamesCounter() {
+        return gamesCounter;
+    }
+
+    public void setGamesCounter(int gamesCounter) {
+        this.gamesCounter = gamesCounter;
+    }
+    
+    public void addProduct(int productQty, String type){
+        switch(type){
+            case "Narrativa":
+                if (narrative<25){
+                    if ((narrative+productQty >25)){
+                        narrative += (25-narrative);
+                    }else{
+                        narrative += productQty;
+                    }
+                    labels[0].setText("Texto:"+ Integer.toString(narrative));
+                }
+                break;
+            
+            case "Niveles":
+                if (levels<20){
+                    if ((levels+productQty >20)){
+                        levels += (20-levels);
+                    }else{
+                        levels += productQty;
+                    }
+                    labels[0].setText("Texto:"+ Integer.toString(levels));
+                }
+                break;
+            
+            case "Sprites":
+                if (sprites<55){
+                    if ((sprites+productQty >55)){
+                        sprites += (55-sprites);
+                    }else{
+                        sprites += productQty;
+                    }
+                    labels[0].setText("Texto:"+ Integer.toString(sprites));
+                }
+                break;
+                
+            case "Lógica":
+                if (logic<35){
+                    if ((logic+productQty >35)){
+                        logic += (35-logic);
+                    }else{
+                        logic += productQty;
+                    }
+                    labels[0].setText("Texto:"+ Integer.toString(logic));
+                }
+                break;
+                
+            case "DLC":
+                if (DLC<10){
+                    if ((DLC+productQty >10)){
+                        narrative += (10-DLC);
+                    }else{
+                        DLC += productQty;
+                    }
+                    labels[0].setText("Texto:"+ Integer.toString(DLC));
+                }
+                break;
+        }
     }
 }
