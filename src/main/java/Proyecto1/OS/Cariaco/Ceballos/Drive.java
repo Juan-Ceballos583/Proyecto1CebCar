@@ -167,4 +167,48 @@ public class Drive {
                 break;
         }
     }
+    
+     //Integrador
+                if (getNarrative() >= conditions[0] && getLevels() >= conditions[1] && getSprites() >= conditions[2] && getLogic() >= conditions[3]) {
+                    if (getGames() % conditions[4] == 0 && getGamesDLC() < (getGames() / conditions[4]) && getDLC() >= conditions[5]) {
+                        setGamesDLC(getGamesDLC() + productCanti);
+                        RestarProducto(0);
+                        System.out.println("SE CREO UN JUEGO CON DLC :000" + productCanti);
+                    } else {
+                        setGames(getGames() + productCanti);
+                        RestarProducto(1);
+                        System.out.println("SE CREO UN JUEGO");
+                    }
+                }
+            }
+            default -> {
+            }
+        }
+    }
+
+    public void RestarProducto(int t) {
+
+        if (t == 1) {
+            setNarrative(getNarrative() - conditions[0]);
+            setLevels(getLevels() - conditions[1]);
+            setSprites(getSprites() - conditions[2]);
+            setLogic(getLogic() - conditions[3]);
+        } else {
+            setNarrative(getNarrative() - conditions[0]);
+            setLevels(getLevels() - conditions[1]);
+            setSprites(getSprites() - conditions[2]);
+            setLogic(getLogic() - conditions[3]);
+            setDLC(getDLC() - conditions[5]);
+        }
+    }
+    
+    public int[] ResetDeadline(int stonks, int stonksDLC) {
+        int units = getGames();
+        int dlcunits = getGamesDLC();
+        setGames(0);
+        setGamesDLC(0);
+        int[] Tstonks = {units*stonks*1000, dlcunits*stonksDLC*1000};
+        return Tstonks;
+    }
+    
 }

@@ -6,8 +6,10 @@ import java.util.concurrent.Semaphore;
 public class Main {
 
     public static void main(String[] args) {
-        Semaphore mutex = new Semaphore(1);
-       
+       Interfaz1 ventana = new Interfaz1();
+       ventana.setVisible(true);
+       ventana.setLocationRelativeTo(null);
+       ventana.setTitle("Proyecto 1 SO Cariaco. Ceballos");
     }
     
 }

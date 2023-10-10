@@ -5,6 +5,7 @@ import static java.lang.Thread.sleep;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class StudioDeveloper {
     private String type;
@@ -24,7 +25,7 @@ public class StudioDeveloper {
         this.company= company;
         this.earnings= 0;
         this.totalProduction= 0;
-        this.configureDeveloperByComponent();
+        this.configureDeveloper();
         this.drive = drive;
         this.mutex = m;
     }
@@ -33,7 +34,7 @@ public class StudioDeveloper {
     public void run() {
         while(true) {
             try {  
-                produceGameComponent();
+                gameComponentProduction();
                 sleep(dayDuration);
             } catch (InterruptedException ex) {
                 System.out.println("Ocurrió un error");
@@ -41,7 +42,7 @@ public class StudioDeveloper {
         }
     }
     
-    private void configureDeveloperByComponent(){
+    public void configureDeveloper(){
         if (company.equals("Square Enix")){
             switch(gameComponent){
                 case "Narrativa":
@@ -99,26 +100,20 @@ public class StudioDeveloper {
     }
  }
     
-    public void Work(){
-        this.acc += this.productionPerDay;
-        if (this.acc >= 1){
-            try {
-                 // sección critica
-                this.mutex.acquire(1);
-                this.drive.addProduct(1, type);
-              
-                this.acc=0;
-                this.mutex.release();
-                
-            } catch (InterruptedException ex) {
-                Logger.getLogger(StudioDeveloper.class.getName()).log(Level.SEVERE, null, ex);
-            }
+    public void gameComponentProduction(){
+        totalProduction += productionPerDay;
+        if(totalProduction >=1){
+           try{
+               int roundProduction= (int) Math.floor(totalProduction);
+               mutex.acquire(1);
+               drive.addProduct(roundProduction, gameComponent);
+               mutex.release();
+               totalProduction= 0;
+           }catch(Exception e){
+               JOptionPane.showMessageDialog(null, "Error!!!!");
+           }
+            
         }
-        System.out.println(this.drive.getLevels());
-        System.out.println(this.drive.getNarrative());
-        System.out.println(this.drive.getSprites());
-        System.out.println(this.drive.getLogic());
-        System.out.println(this.drive.getDLC());
     }
 }
 
