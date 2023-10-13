@@ -2,10 +2,11 @@
 package Proyecto1.OS.Cariaco.Ceballos;
 
 import java.util.concurrent.Semaphore;
+import javax.swing.JOptionPane;
 
 public class Interfaz1 extends javax.swing.JFrame {
     Semaphore mutex = new Semaphore(1);
-    
+       
     public Interfaz1() {
         initComponents();
     }
@@ -21,34 +22,36 @@ public class Interfaz1 extends javax.swing.JFrame {
         Titulo = new javax.swing.JLabel();
         NarrativaTitle = new javax.swing.JLabel();
         NivelesTitulo = new javax.swing.JLabel();
-        LogicaTitulo = new javax.swing.JLabel();
         DLCTitulo = new javax.swing.JLabel();
+        LogicaTextField = new javax.swing.JTextField();
         IntegradorTitulo = new javax.swing.JLabel();
         NarrativaTextField = new javax.swing.JTextField();
-        NivelesTextField = new javax.swing.JTextField();
-        LogicaTextField = new javax.swing.JTextField();
         DLCTextField = new javax.swing.JTextField();
+        NivelesTextField = new javax.swing.JTextField();
         IntegradorTextField = new javax.swing.JTextField();
         NarrativaBTN = new javax.swing.JButton();
         NivelesBTN = new javax.swing.JButton();
-        LogicaBTN = new javax.swing.JButton();
+        LogicaTitulo = new javax.swing.JLabel();
         DLCBTN = new javax.swing.JButton();
+        LogicaBTN = new javax.swing.JButton();
         IntegradorBTN = new javax.swing.JButton();
-        Subtitulo1 = new javax.swing.JLabel();
         NarrativaProduccion = new javax.swing.JTextField();
         NivelesProduccion = new javax.swing.JTextField();
         LogicaProduccion = new javax.swing.JTextField();
         DLCProduccion = new javax.swing.JTextField();
-        IntegradorProduccion = new javax.swing.JTextField();
-        Subtitulo2 = new javax.swing.JLabel();
+        Subtitulo1 = new javax.swing.JLabel();
+        DuracionDelDiaTitulo = new javax.swing.JLabel();
         DuracionDiaTextField = new javax.swing.JTextField();
         DuracionDiaBTN = new javax.swing.JButton();
+        EliminarBTN = new javax.swing.JButton();
+        Subtitulo2 = new javax.swing.JLabel();
+        IntegradorProduccion = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
 
         Interfaz2BTN.setText("Interfaz 2");
         Interfaz2BTN.addActionListener(new java.awt.event.ActionListener() {
@@ -56,7 +59,7 @@ public class Interfaz1 extends javax.swing.JFrame {
                 Interfaz2BTNActionPerformed(evt);
             }
         });
-        getContentPane().add(Interfaz2BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
+        jPanel1.add(Interfaz2BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
 
         Interfaz3BTN.setText("Interfaz 3");
         Interfaz3BTN.addActionListener(new java.awt.event.ActionListener() {
@@ -64,75 +67,185 @@ public class Interfaz1 extends javax.swing.JFrame {
                 Interfaz3BTNActionPerformed(evt);
             }
         });
-        getContentPane().add(Interfaz3BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, -1, -1));
+        jPanel1.add(Interfaz3BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, -1, -1));
 
         Titulo.setText("Estadísticas");
-        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 70, 10));
+        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 70, 10));
 
         NarrativaTitle.setText("Narrativa");
-        getContentPane().add(NarrativaTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, 20));
+        jPanel1.add(NarrativaTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, 20));
 
         NivelesTitulo.setText("Niveles");
-        getContentPane().add(NivelesTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
-
-        LogicaTitulo.setText("Logica");
-        getContentPane().add(LogicaTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        jPanel1.add(NivelesTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         DLCTitulo.setText("DLC");
-        getContentPane().add(DLCTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        jPanel1.add(DLCTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        jPanel1.add(LogicaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 30, -1));
 
         IntegradorTitulo.setText("Integrador");
-        getContentPane().add(IntegradorTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
-        getContentPane().add(NarrativaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 30, -1));
-        getContentPane().add(NivelesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 30, -1));
-        getContentPane().add(LogicaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 30, -1));
-        getContentPane().add(DLCTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 30, -1));
-        getContentPane().add(IntegradorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 30, -1));
+        jPanel1.add(IntegradorTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+        jPanel1.add(NarrativaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 30, -1));
+        jPanel1.add(DLCTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 30, -1));
+        jPanel1.add(NivelesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 30, -1));
+        jPanel1.add(IntegradorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 30, -1));
 
         NarrativaBTN.setText("Agregar");
-        getContentPane().add(NarrativaBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
+        NarrativaBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NarrativaBTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(NarrativaBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         NivelesBTN.setText("Agregar");
-        getContentPane().add(NivelesBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
+        NivelesBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NivelesBTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(NivelesBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
 
-        LogicaBTN.setText("Agregar");
-        getContentPane().add(LogicaBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+        LogicaTitulo.setText("Logica");
+        jPanel1.add(LogicaTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         DLCBTN.setText("Agregar");
-        getContentPane().add(DLCBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, -1));
+        DLCBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DLCBTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(DLCBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, -1));
+
+        LogicaBTN.setText("Agregar");
+        LogicaBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogicaBTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(LogicaBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
         IntegradorBTN.setText("Agregar");
-        getContentPane().add(IntegradorBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
+        IntegradorBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IntegradorBTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(IntegradorBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
+        jPanel1.add(NarrativaProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 60, -1));
+        jPanel1.add(NivelesProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 60, -1));
+        jPanel1.add(LogicaProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 60, -1));
+        jPanel1.add(DLCProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 60, -1));
 
         Subtitulo1.setText("Produccion");
-        getContentPane().add(Subtitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, -1, -1));
-        getContentPane().add(NarrativaProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 60, -1));
-        getContentPane().add(NivelesProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 60, -1));
-        getContentPane().add(LogicaProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 60, -1));
-        getContentPane().add(DLCProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 60, -1));
-        getContentPane().add(IntegradorProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 60, -1));
+        jPanel1.add(Subtitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
 
-        Subtitulo2.setText("Duracion del Dia");
-        getContentPane().add(Subtitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
-        getContentPane().add(DuracionDiaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 40, 20));
+        DuracionDelDiaTitulo.setText("Duracion del Dia");
+        jPanel1.add(DuracionDelDiaTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+        jPanel1.add(DuracionDiaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 40, 20));
 
         DuracionDiaBTN.setText("Cambiar");
-        getContentPane().add(DuracionDiaBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
+        DuracionDiaBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DuracionDiaBTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(DuracionDiaBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, -1, -1));
+
+        EliminarBTN.setText("Eliminar");
+        EliminarBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarBTNActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EliminarBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
+
+        Subtitulo2.setText("Gráfica");
+        jPanel1.add(Subtitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, -1, -1));
+        jPanel1.add(IntegradorProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 60, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Portada.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 440));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void Interfaz2BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Interfaz2BTNActionPerformed
-        Interfaz2 v2= new Interfaz2();
-        v2.setVisible(true);
-        this.dispose();
+        try{
+           Interfaz2 v2= new Interfaz2();
+            v2.setVisible(true);
+            this.dispose(); 
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+        }
     }//GEN-LAST:event_Interfaz2BTNActionPerformed
 
     private void Interfaz3BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Interfaz3BTNActionPerformed
-        Interfaz3 v3= new Interfaz3();
+       try{
+           Interfaz3 v3= new Interfaz3();
         v3.setVisible(true);
         this.dispose();
+       }catch(Exception e){
+           JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+       } 
     }//GEN-LAST:event_Interfaz3BTNActionPerformed
+
+    private void NarrativaBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NarrativaBTNActionPerformed
+        try{
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+        }
+    }//GEN-LAST:event_NarrativaBTNActionPerformed
+
+    private void NivelesBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NivelesBTNActionPerformed
+        try{
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+        }
+    }//GEN-LAST:event_NivelesBTNActionPerformed
+
+    private void LogicaBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogicaBTNActionPerformed
+        try{
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+        }
+    }//GEN-LAST:event_LogicaBTNActionPerformed
+
+    private void DLCBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DLCBTNActionPerformed
+        try{
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+        }
+    }//GEN-LAST:event_DLCBTNActionPerformed
+
+    private void IntegradorBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntegradorBTNActionPerformed
+        try{
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+        }
+    }//GEN-LAST:event_IntegradorBTNActionPerformed
+
+    private void EliminarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarBTNActionPerformed
+        try{
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+        }
+    }//GEN-LAST:event_EliminarBTNActionPerformed
+
+    private void DuracionDiaBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DuracionDiaBTNActionPerformed
+        try{
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+        }
+    }//GEN-LAST:event_DuracionDiaBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,8 +288,10 @@ public class Interfaz1 extends javax.swing.JFrame {
     private javax.swing.JTextField DLCProduccion;
     private javax.swing.JTextField DLCTextField;
     private javax.swing.JLabel DLCTitulo;
+    private javax.swing.JLabel DuracionDelDiaTitulo;
     private javax.swing.JButton DuracionDiaBTN;
     private javax.swing.JTextField DuracionDiaTextField;
+    private javax.swing.JButton EliminarBTN;
     private javax.swing.JButton IntegradorBTN;
     private javax.swing.JTextField IntegradorProduccion;
     private javax.swing.JTextField IntegradorTextField;
@@ -198,6 +313,8 @@ public class Interfaz1 extends javax.swing.JFrame {
     private javax.swing.JLabel Subtitulo1;
     private javax.swing.JLabel Subtitulo2;
     private javax.swing.JLabel Titulo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
 }

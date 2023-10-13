@@ -5,6 +5,8 @@
  */
 package Proyecto1.OS.Cariaco.Ceballos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juan Ceballos
@@ -28,14 +30,30 @@ public class Interfaz3 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        VolverBTN = new javax.swing.JButton();
         Titulo = new javax.swing.JLabel();
+        VolverBTN = new javax.swing.JButton();
+        Subtitulo1 = new javax.swing.JLabel();
+        NarrativaField = new javax.swing.JTextField();
+        NivelesField = new javax.swing.JTextField();
+        LogicaField = new javax.swing.JTextField();
+        DLCField = new javax.swing.JTextField();
+        JuegosSinDLCField = new javax.swing.JTextField();
+        JuegosConDLCField = new javax.swing.JTextField();
+        NarrativaTXT = new javax.swing.JLabel();
+        NivelesTXT = new javax.swing.JLabel();
+        LogicaTXT = new javax.swing.JLabel();
+        DLCTXT = new javax.swing.JLabel();
+        JuegosSinDLCTXT = new javax.swing.JLabel();
+        JuegosConDLCTXT = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+
+        Titulo.setText("Capcom");
+        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         VolverBTN.setText("Volver");
         VolverBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -43,18 +61,51 @@ public class Interfaz3 extends javax.swing.JFrame {
                 VolverBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(VolverBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+        jPanel1.add(VolverBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
 
-        Titulo.setText("Capcom");
-        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+        Subtitulo1.setText("Producción");
+        jPanel1.add(Subtitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+        jPanel1.add(NarrativaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 60, -1));
+        jPanel1.add(NivelesField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 60, -1));
+        jPanel1.add(LogicaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 60, -1));
+        jPanel1.add(DLCField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 60, -1));
+        jPanel1.add(JuegosSinDLCField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 60, -1));
+        jPanel1.add(JuegosConDLCField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 60, -1));
+
+        NarrativaTXT.setText("Narrativa");
+        jPanel1.add(NarrativaTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
+
+        NivelesTXT.setText("Niveles");
+        jPanel1.add(NivelesTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
+
+        LogicaTXT.setText("Lógica");
+        jPanel1.add(LogicaTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+
+        DLCTXT.setText("DLC");
+        jPanel1.add(DLCTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
+
+        JuegosSinDLCTXT.setText("Juegos Sin DLC");
+        jPanel1.add(JuegosSinDLCTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
+
+        JuegosConDLCTXT.setText("Juegos Con DLC");
+        jPanel1.add(JuegosConDLCTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Capcom1.jpg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void VolverBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBTNActionPerformed
+        try{
         Interfaz1 v1= new Interfaz1();
         v1.setVisible(true);
         this.dispose();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Hubo un error. Por favor, inténtelo de nuevo");
+        }
     }//GEN-LAST:event_VolverBTNActionPerformed
 
     /**
@@ -93,8 +144,22 @@ public class Interfaz3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField DLCField;
+    private javax.swing.JLabel DLCTXT;
+    private javax.swing.JTextField JuegosConDLCField;
+    private javax.swing.JLabel JuegosConDLCTXT;
+    private javax.swing.JTextField JuegosSinDLCField;
+    private javax.swing.JLabel JuegosSinDLCTXT;
+    private javax.swing.JTextField LogicaField;
+    private javax.swing.JLabel LogicaTXT;
+    private javax.swing.JTextField NarrativaField;
+    private javax.swing.JLabel NarrativaTXT;
+    private javax.swing.JTextField NivelesField;
+    private javax.swing.JLabel NivelesTXT;
+    private javax.swing.JLabel Subtitulo1;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton VolverBTN;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
